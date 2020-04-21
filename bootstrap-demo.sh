@@ -119,8 +119,14 @@ gcloud services enable \
     serviceusage.googleapis.com \
     sourcerepo.googleapis.com \
     iamcredentials.googleapis.com \
-    contextgraph.googleapis.com \
-    stackdriver.googleapis.com 
+    stackdriver.googleapis.com \
+    compute.googleapis.com \
+    monitoring.googleapis.com \
+    logging.googleapis.com \
+    meshca.googleapis.com \
+    meshtelemetry.googleapis.com \
+    meshconfig.googleapis.com \
+    anthos.googleapis.com 
 
 
 ## Provision Clusters
