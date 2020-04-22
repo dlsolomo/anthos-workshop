@@ -23,7 +23,7 @@ export BASE_DIR=$PWD
 echo $BASE_DIR
 export WORK_DIR=$BASE_DIR/workdir
 echo $WORK_DIR
-export PATH=$PATH:$WORK_DIR/bin:
+export PATH=$PATH:$WORK_DIR/bin:~/anthos-workshop/workdir/bin
 export REMOTE_CLUSTER_NAME=$REMOTE_CLUSTER_NAME_BASE.k8s.local
 export KOPS_STORE=gs://$PROJECT-kops-$REMOTE_CLUSTER_NAME_BASE
 export REMOTE_KUBECONFIG=$WORK_DIR/${REMOTE_CLUSTER_NAME_BASE}.context
