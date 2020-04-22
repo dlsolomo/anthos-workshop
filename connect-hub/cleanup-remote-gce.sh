@@ -15,6 +15,10 @@
 # limitations under the License.
 
 # Variables
+export BASE_DIR=$PWD
+echo $BASE_DIR
+export WORK_DIR=$BASE_DIR/workdir
+echo $WORK_DIR
 export PROJECT=$(gcloud config get-value project)
 export WORK_DIR=${WORK_DIR:="${PWD}/workdir"}
 export PATH=$PATH:$WORK_DIR/bin:
@@ -30,7 +34,3 @@ kops delete cluster --name $REMOTE_CLUSTER_NAME --state $KOPS_STORE --yes
 gsutil -m rm -r $KOPS_STORE
 
 kubectx -d $REMOTE_CLUSTER_NAME_BASE
-
-
-
-
