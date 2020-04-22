@@ -28,6 +28,26 @@ gcloud config set project ${PROJECT_ID}
 export CLUSTER_NAME=central
 export CLUSTER_LOCATION=us-central1-b
 
+# Install Tools
+mkdir -p $WORK_DIR/bin
+echo "### "
+echo "### Begin Tools install"
+echo "### "
+## Install kubectx
+curl -sLO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
+chmod +x kubectx
+mv kubectx $WORK_DIR/bin
+# Install Kops
+curl -sLO https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"'
+ -f 4)/kops-linux-amd64
+chmod +x kops-linux-amd64
+mv kops-linux-amd64 $WORK_DIR/bin/kops
+# Install nomos
+gsutil cp gs://config-management-release/released/latest/linux_amd64/nomos nomos
+chmod +x nomos
+mv nomos $WORK_DIR/bin
+
+
 #Install Anthos CLI and Components
 sudo gcloud components install kpt anthoscli alpha
 sudo gcloud components update
