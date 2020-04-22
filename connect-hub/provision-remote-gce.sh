@@ -19,7 +19,11 @@ export PROJECT=$(gcloud config get-value project)
 export WORK_DIR=${WORK_DIR:="${PWD}/workdir"}
 
 export REMOTE_CLUSTER_NAME_BASE=${GCE_CONTEXT:-"onprem"}
-
+export BASE_DIR=$PWD
+echo $BASE_DIR
+export WORK_DIR=$BASE_DIR/workdir
+echo $WORK_DIR
+export PATH=$PATH:$WORK_DIR/bin:
 export REMOTE_CLUSTER_NAME=$REMOTE_CLUSTER_NAME_BASE.k8s.local
 export KOPS_STORE=gs://$PROJECT-kops-$REMOTE_CLUSTER_NAME_BASE
 export REMOTE_KUBECONFIG=$WORK_DIR/${REMOTE_CLUSTER_NAME_BASE}.context
