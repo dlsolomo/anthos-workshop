@@ -15,7 +15,7 @@ gcloud services enable \
     meshconfig.googleapis.com \
     anthos.googleapis.com
 
-cd anthos-workshop
+cd ~/anthos-workshop
 
 # setup environment
 export BASE_DIR=$PWD
