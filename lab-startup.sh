@@ -27,12 +27,17 @@ export PROJECT_ID=$DEVSHELL_PROJECT_ID
 gcloud config set project ${PROJECT_ID}
 export CLUSTER_NAME=central
 export CLUSTER_LOCATION=us-central1-b
+export ISTIO_VERSION=1.1.4
 
 # Install Tools
 mkdir -p $WORK_DIR/bin
 echo "### "
 echo "### Begin Tools install"
 echo "### "
+# Download Istio
+curl -L https://git.io/getLatestIstio | ISTIO_VERSION=$ISTIO_VERSION sh -
+cp istio-$ISTIO_VERSION/bin/istioctl $WORK_DIR/bin/.
+mv istio-$ISTIO_VERSION $WORK_DIR/
 ## Install kubectx
 curl -sLO https://raw.githubusercontent.com/ahmetb/kubectx/master/kubectx
 chmod +x kubectx
@@ -64,3 +69,12 @@ anthoscli apply -f asm
 # Install Tree
 sudo apt-get install tree
 source $BASE_DIR/common/manage-state.sh
+
+# Setup onprem GCE Cluster
+connecthub/provision-remote-gce.sh
+# Add onprem Cluster to hub
+connecthub/connect-hub.sh
+# 1.  Setup remote cluster
+# 2.  Enable Istio on remote cluster
+# 3.  Enable and create Config Mgmt and Repo
+# 4.  Enable Cloud Run
