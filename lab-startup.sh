@@ -71,9 +71,9 @@ sudo apt-get install tree
 source $BASE_DIR/common/manage-state.sh
 
 # Setup onprem GCE Cluster
-connecthub/provision-remote-gce.sh
+connect-hub/provision-remote-gce.sh
 # Add onprem Cluster to hub
-connecthub/connect-hub.sh
+connect-hub/connect-hub.sh
 # 1.  Setup remote cluster
 # 2.  Enable Istio on remote cluster
 # 3.  Enable and create Config Mgmt and Repo
