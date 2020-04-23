@@ -53,8 +53,8 @@ mv nomos $WORK_DIR/bin
 
 
 #Install Anthos CLI and Components
-sudo gcloud components install kpt anthoscli alpha
-sudo gcloud components update
+sudo gcloud components install kpt anthoscli alpha --quiet
+sudo gcloud components update --quiet
 kpt pkg get \
 https://github.com/GoogleCloudPlatform/anthos-service-mesh-packages.git/asm .
 
