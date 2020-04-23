@@ -27,7 +27,7 @@ export PROJECT_ID=$DEVSHELL_PROJECT_ID
 gcloud config set project ${PROJECT_ID}
 export CLUSTER_NAME=central
 export CLUSTER_LOCATION=us-central1-b
-export ISTIO_VERSION=1.1.4
+export ISTIO_VERSION=1.4.7
 
 # Install Tools
 mkdir -p $WORK_DIR/bin
