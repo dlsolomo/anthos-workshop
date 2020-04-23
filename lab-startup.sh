@@ -84,3 +84,4 @@ hybrid-multicluster/istio-install-single.sh
 # 2.  Enable Istio on remote cluster
 # 3.  Enable and create Config Mgmt and Repo
 # 4.  Enable Cloud Run
+# 5.  Automate kpt responses

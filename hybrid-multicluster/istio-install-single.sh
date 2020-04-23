@@ -36,7 +36,7 @@ kubectl apply -f ${WORK_DIR}/istio-${ISTIO_VERSION}/install/kubernetes/helm/helm
 # helm init --service-account tiller --wait
 helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -
 # wait for helm to install in central cluster
-#until timeout 10 helm version; do sleep 10; done
+until timeout 10 helm version; do sleep 10; done
 
 # Create a secret with the sample certs for multicluster deployment
 kubectl create secret generic cacerts -n istio-system \
