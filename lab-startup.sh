@@ -72,8 +72,14 @@ source $BASE_DIR/common/manage-state.sh
 
 # Setup onprem GCE Cluster
 connect-hub/provision-remote-gce.sh
+
 # Add onprem Cluster to hub
 connect-hub/connect-hub.sh
+
+#Install Istio on onprem cluster
+hybrid-multicluster/istio-install-single.sh
+
+
 # 1.  Setup remote cluster
 # 2.  Enable Istio on remote cluster
 # 3.  Enable and create Config Mgmt and Repo
