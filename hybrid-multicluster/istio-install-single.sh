@@ -19,7 +19,7 @@ echo "### Begin install istio control plane"
 echo "### "
 
 # Set vars for DIRs
-export ISTIO_VERSION=1.1.4
+export ISTIO_VERSION=1.4.7
 export WORK_DIR=${WORK_DIR:="${PWD}/workdir"}
 export ISTIO_DIR=$WORK_DIR/istio-$ISTIO_VERSION
 export BASE_DIR=${BASE_DIR:="${PWD}/.."}
@@ -60,4 +60,3 @@ kubectl apply -f ${ISTIO_CONFIG_DIR}/istio-multicluster/kiali-secret.yaml
 # Install Istio
 helm install ${WORK_DIR}/istio-${ISTIO_VERSION}/install/kubernetes/helm/istio --name istio --namespace istio-system \
 --values ${ISTIO_CONFIG_DIR}/istio-multicluster/values-istio-multicluster-gateways.yaml
-
