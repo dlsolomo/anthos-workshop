@@ -20,7 +20,7 @@ export PROJECT_ID=${PROJECT}
 export WORK_DIR=${WORK_DIR:="${PWD}/workdir"}
 
 export CLUSTER="gcp"
-export CLUSTER_VERSION="1.15.7-gke.23"
+export CLUSTER_VERSION="1.15.9-gke.24"
 export ZONE="us-central1-b"
 export CLUSTER_KUBECONFIG=$WORK_DIR/central.context
 
@@ -54,10 +54,3 @@ kubectx ${CLUSTER}
 KUBECONFIG= kubectl config view --minify --flatten --context=$CLUSTER > $CLUSTER_KUBECONFIG
 
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user="$(gcloud config get-value core/account)"
-
-
-
-
-
-
-
