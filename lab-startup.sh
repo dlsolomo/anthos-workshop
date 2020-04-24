@@ -77,7 +77,7 @@ connect-hub/provision-remote-gce.sh
 connect-hub/connect-hub.sh
 
 #Install Istio on onprem cluster
-hybrid-multicluster/istio-install-single.sh
+# hybrid-multicluster/istio-install-single.sh
 
 
 # 1.  Setup remote cluster
