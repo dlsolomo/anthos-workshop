@@ -79,6 +79,50 @@ connect-hub/connect-hub.sh
 # Rename GKE Cluster Context
 kubectx central=gke_${PROJECT_ID}_${CLUSTER_LOCATION}
 
+# Config Management Setup
+export PROJECT=$(gcloud config get-value project)
+cd $HOME
+export GCLOUD_ACCOUNT=$(gcloud config get-value account)
+export REPO_URL=https://source.developers.google.com/p/${PROJECT}/r/config-repo
+
+# Setup Repo
+git clone https://github.com/cgrant/config-repo config-repo
+cd config-repo
+git remote remove origin
+git config credential.helper gcloud.sh
+git remote add origin $REPO_URL
+
+gcloud source repos create config-repo
+git push -u origin master
+
+# Install Config management Operator
+kubectx central
+gsutil cp gs://config-management-release/released/latest/config-management-operator.yaml config-management-operator.yaml
+kubectl apply -f config-management-operator.yaml
+kubectl onprem
+kubectl apply -f config-management-operator.yaml
+
+# Create Repo SSH Key
+ssh-keygen -t rsa -b 4096 \
+-C "$GCLOUD_ACCOUNT" \
+-N '' \
+-f $HOME/.ssh/id_rsa.nomos
+
+# Configure Repo
+kubectx central
+kubectl create secret generic git-creds \
+--namespace=config-management-system \
+--from-file=ssh=$HOME/.ssh/id_rsa.nomos
+
+kubectx onprem
+kubectl create secret generic git-creds \
+--namespace=config-management-system \
+--from-file=ssh=$HOME/.ssh/id_rsa.nomos
+
+# Enable Cloud Run on GKE
+gcloud container clusters update central --update-addons=CloudRun=ENABLED,HttpLoadBalancing=ENABLED --zone=us-central1-b
+
+
 #Install Istio on onprem cluster
 # hybrid-multicluster/istio-install-single.sh
 
