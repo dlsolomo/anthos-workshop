@@ -77,7 +77,7 @@ connect-hub/provision-remote-gce.sh
 connect-hub/connect-hub.sh
 
 # Rename GKE Cluster Context
-kubectx central=gke_${PROJECT_ID}_${CLUSTER_LOCATION}
+kubectx central=gke_${PROJECT_ID}_${CLUSTER_LOCATION}_central
 
 # Config Management Setup
 export PROJECT=$(gcloud config get-value project)
@@ -99,7 +99,7 @@ git push -u origin master
 kubectx central
 gsutil cp gs://config-management-release/released/latest/config-management-operator.yaml config-management-operator.yaml
 kubectl apply -f config-management-operator.yaml
-kubectl onprem
+kubectx onprem
 kubectl apply -f config-management-operator.yaml
 
 # Create Repo SSH Key
