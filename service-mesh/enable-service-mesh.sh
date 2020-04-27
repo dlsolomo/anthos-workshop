@@ -17,7 +17,7 @@ export ZONE="us-central1-b"
 
 kubectx gcp
 
-gcloud services enable contextgraph.googleapis.com --project ${PROJECT_ID}
+# gcloud services enable contextgraph.googleapis.com --project ${PROJECT_ID}
 ACCOUNT=$(gcloud config get-value account)
 
 kubectl create clusterrolebinding cluster-admin-binding --clusterrole="cluster-admin" --user=${ACCOUNT}

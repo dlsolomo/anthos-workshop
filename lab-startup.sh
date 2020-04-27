@@ -70,6 +70,9 @@ anthoscli apply -f asm
 sudo apt-get install tree
 source $BASE_DIR/common/manage-state.sh
 
+# Rename GKE Cluster Context
+kubectx central=gke_${PROJECT_ID}_${CLUSTER_LOCATION}
+
 # Setup onprem GCE Cluster
 connect-hub/provision-remote-gce.sh
 
