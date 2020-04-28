@@ -20,17 +20,17 @@ echo "### "
 
 
 # Set vars for DIRs
-export BASE_DIR=${BASE_DIR:="${PWD}/.."}
+export BASE_DIR=${BASE_DIR:="${PWD}"}
 echo "BASE_DIR set to $BASE_DIR"
 export ISTIO_CONFIG_DIR="$BASE_DIR/hybrid-multicluster/istio"
 
 # Get Istio ingress gateway Ip addresses from both central and remote clusters
-export GWIP_CENTRAL=$(kubectl --context gcp get -n istio-system service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+export GWIP_CENTRAL=$(kubectl --context central get -n istio-system service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export GWIP_REMOTE=$(kubectl --context onprem get -n istio-system service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 
 # Prepare central cluster hipster manifests
 # change context to central cluster
-kubectx gcp
+kubectx central
 # Prepare the service-entries yaml to add the remote cluster istio ingress gateway IP
 # for all services running in the remote cluster
 export pattern='.*- address:.*'

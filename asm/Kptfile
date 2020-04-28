@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+    name: asm
+upstream:
+    type: git
+    git:
+        commit: 7ce7ce08a254d8877d7fd9e0ff731189950656f8
+        repo: https://github.com/GoogleCloudPlatform/anthos-service-mesh-packages
+        directory: /asm
+        ref: master
