@@ -16,47 +16,47 @@
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: compute.googleapis.com
 ---
 # GKE
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: container.googleapis.com
 ---
 # Short lived iam credentials for workload identity
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: iamcredentials.googleapis.com
 ---
 # Mesh Certificate Authority
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: meshca.googleapis.com
 ---
 # Mesh Telemetry
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: meshtelemetry.googleapis.com
 ---
 # Mesh Config
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: meshconfig.googleapis.com
 ---
 # Anthos
 apiVersion: serviceusage.cnrm.cloud.google.com/v1beta1
 kind: Service
 metadata:
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
   name: anthos.googleapis.com

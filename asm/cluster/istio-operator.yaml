@@ -15,21 +15,21 @@
 apiVersion: install.istio.io/v1alpha2
 kind: IstioControlPlane
 metadata:
-  clusterName: "qwiklabs-gcp-03-d8fc78820c6d/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
+  clusterName: "qwiklabs-gcp-03-2d91b29dfaa6/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
 spec:
   profile: asm
   hub: gcr.io/gke-release/asm
   tag: 1.4.7-asm.0
   values:
     global:
-      meshID: "proj-109475739519" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.project.projectNumber","value":"109475739519"}]}}
-      trustDomain: "qwiklabs-gcp-03-d8fc78820c6d.svc.id.goog" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}]}}
+      meshID: "proj-350154869828" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.project.projectNumber","value":"350154869828"}]}}
+      trustDomain: "qwiklabs-gcp-03-2d91b29dfaa6.svc.id.goog" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}]}}
       sds:
         token:
-          aud: "qwiklabs-gcp-03-d8fc78820c6d.svc.id.goog" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}]}}
+          aud: "qwiklabs-gcp-03-2d91b29dfaa6.svc.id.goog" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}]}}
       proxy:
         env:
-          GCP_METADATA: "qwiklabs-gcp-03-d8fc78820c6d|109475739519|central|us-central1-b" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"},{"name":"gcloud.project.projectNumber","value":"109475739519"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
+          GCP_METADATA: "qwiklabs-gcp-03-2d91b29dfaa6|350154869828|central|us-central1-b" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"},{"name":"gcloud.project.projectNumber","value":"350154869828"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
     nodeagent:
       env:
-        GKE_CLUSTER_URL: "https://container.googleapis.com/v1/projects/qwiklabs-gcp-03-d8fc78820c6d/locations/us-central1-b/clusters/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
+        GKE_CLUSTER_URL: "https://container.googleapis.com/v1/projects/qwiklabs-gcp-03-2d91b29dfaa6/locations/us-central1-b/clusters/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}

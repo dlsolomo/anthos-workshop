@@ -15,9 +15,9 @@
 apiVersion: container.cnrm.cloud.google.com/v1alpha2
 kind: ContainerNodePool
 metadata:
-  clusterName: "qwiklabs-gcp-03-d8fc78820c6d/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
+  clusterName: "qwiklabs-gcp-03-2d91b29dfaa6/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
   name: default-pool
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
 spec:
   initialNodeCount: 2
   autoscaling:

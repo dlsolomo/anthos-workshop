@@ -16,21 +16,21 @@ apiVersion: identity.cnrm.cloud.google.com/v1alpha2
 kind: IdentityNamespace
 metadata:
   name: default
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
 spec: {}
 ---
 apiVersion: container.cnrm.cloud.google.com/v1alpha2
 kind: ContainerCluster
 metadata:
-  clusterName: "qwiklabs-gcp-03-d8fc78820c6d/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
+  clusterName: "qwiklabs-gcp-03-2d91b29dfaa6/us-central1-b/central" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"},{"name":"cluster-name","value":"central"},{"name":"gcloud.compute.zone","value":"us-central1-b"}]}}
   name: central # {"type":"string","x-kustomize":{"setter":{"name":"cluster-name","value":"central"}}}
-  namespace: "qwiklabs-gcp-03-d8fc78820c6d" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-d8fc78820c6d"}}}
+  namespace: "qwiklabs-gcp-03-2d91b29dfaa6" # {"type":"string","x-kustomize":{"setBy":"kpt","setter":{"name":"gcloud.core.project","value":"qwiklabs-gcp-03-2d91b29dfaa6"}}}
 spec:
   location: us-central1-b # {"type":"string","x-kustomize":{"setter":{"name":"gcloud.compute.zone","value":"us-central1-b"}}}
   workloadIdentity:
     identityNamespace: default
   labels:
-    mesh_id: "proj-109475739519" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.project.projectNumber","value":"109475739519"}]}}
+    mesh_id: "proj-350154869828" # {"type":"string","x-kustomize":{"setBy":"kpt","partialSetters":[{"name":"gcloud.project.projectNumber","value":"350154869828"}]}}
   loggingService: logging.googleapis.com/kubernetes
   monitoringService: monitoring.googleapis.com/kubernetes
   network: default # {"type":"string","x-kustomize":{"setter":{"name":"gcloud.compute.network"}}}
